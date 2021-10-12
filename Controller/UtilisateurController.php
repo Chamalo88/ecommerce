@@ -106,8 +106,13 @@ class UtilisateurController extends BaseController
             $utilisateur = $dao->findByEmail($_POST['email']);
 
 
-            mail($email, "Lien de réinitialisation de mot de passe site The Chic'N", "cliquer ici $link", "Merci de ne pas repondre à ce mail", "$entetes");
-            $this->afficherMessage("Un email vient de vous être envoyé");
+            $success = mail($email, "Lien de réinitialisation de mot de passe site The Chic'N", "cliquer ici $link", "Merci de ne pas repondre à ce mail", "$entetes");
+            if (!$success) {
+                $errorMessage = error_get_last();
+                $this->afficherMessage('erreur ' . print_r($errorMessage, true));
+            } else {
+                $this->afficherMessage("Un email vient de vous être envoyé");
+            }
         } else {
             $this->afficherMessage("Cet Email n'est pas valide", "warning");
         }
