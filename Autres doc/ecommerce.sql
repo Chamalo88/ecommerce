@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 12 oct. 2021 à 17:45
+-- Généré le : mar. 12 oct. 2021 à 18:20
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -62,8 +62,8 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `nom` varchar(50) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `image` varchar(50) DEFAULT NULL,
-  `prix` tinyint(4) DEFAULT NULL,
-  `stock` tinyint(4) DEFAULT NULL,
+  `prix` decimal(12,0) DEFAULT NULL,
+  `stock` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -79,14 +79,21 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `nom` varchar(50) DEFAULT NULL,
   `prenom` varchar(50) DEFAULT NULL,
   `adresse` varchar(255) DEFAULT NULL,
-  `cp` tinyint(4) DEFAULT NULL,
+  `cp` varchar(50) DEFAULT NULL,
   `ville` varchar(50) DEFAULT NULL,
-  `tel` tinyint(4) DEFAULT NULL,
+  `tel` int(22) DEFAULT NULL,
   `motDePasse` varchar(60) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `admin` tinyint(1) DEFAULT NULL,
+  `admin` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `adresse`, `cp`, `ville`, `tel`, `motDePasse`, `email`, `admin`) VALUES
+(1, 'GRENADINE', 'FRAISE', 'RUE DES PARFUMS DE SIROP', '88000', 'TEISSEIRE', 989900989, '$2y$10$aovFSlIeWYx8.jzHAK30iu0DjDuJqQRtJAB5GzayTZj7iGM/N06XG', 'virginie.gerardin88@gmail.com', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
