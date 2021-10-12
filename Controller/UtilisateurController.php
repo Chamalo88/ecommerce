@@ -13,14 +13,14 @@ class UtilisateurController extends BaseController
     {
         $email = "";
 
-        //si l'utilisateur a validé le formulaire
+
         if (isset($_POST['email'])) {
 
             $email = $_POST['email'];
             $dao = new UtilisateurDao();
             $utilisateur = $dao->findByEmail($_POST['email']);
 
-            //si le pseudo existe et que le mot de passe correspond
+
             if ($utilisateur && password_verify($_POST['motDePasse'], $utilisateur->getMotDePasse())) {
                 $_SESSION["utilisateur"] = serialize($utilisateur);
                 $this->afficherMessage("Vous êtes connecté");

@@ -4,6 +4,7 @@ namespace Dao;
 
 use Connexion;
 
+
 class UtilisateurDao extends BaseDao
 {
 
@@ -45,6 +46,7 @@ class UtilisateurDao extends BaseDao
 
         //si un utilisateur a bien cet email
         if ($tableauUtilisateur) {
+            //return true;
             return $this->transformeTableauEnObjet($tableauUtilisateur);
         } else {
             return false;
