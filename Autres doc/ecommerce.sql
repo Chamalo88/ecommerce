@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 12 oct. 2021 à 16:59
+-- Généré le : mar. 12 oct. 2021 à 17:45
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `cp` tinyint(4) DEFAULT NULL,
   `ville` varchar(50) DEFAULT NULL,
   `tel` tinyint(4) DEFAULT NULL,
-  `mot_de_passe` varchar(60) DEFAULT NULL,
+  `motDePasse` varchar(60) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `admin` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
