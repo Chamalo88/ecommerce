@@ -19,3 +19,4 @@
             <input type="submit" class="btn btn-info" value="Connexion">
         </div>
     </form>
+    <a class="D" href="<?= config::$baseUrl ?>/utilisateur/emailReinit">Mot de passe oublié ?</a>
