@@ -4,7 +4,7 @@
 
     <form method="POST">
         <div class="log">
-            <h1>CONNEXION</h2>
+            <h1>CONNEXION</h1>
         </div>
         <div>
             <label>Email :</label>

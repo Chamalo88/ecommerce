@@ -152,4 +152,17 @@ class UtilisateurController extends BaseController
 
         $this->afficherVue("newmdp", $donnees);
     }
+
+    public function contact() {
+
+        $to = "colin_dev@outlook.fr";
+
+        $message = "Line 1\r\nLine 2\r\nLine 3";
+
+        $message = wordwrap($message, 70, "\r\n");
+
+        mail($to, 'Mon Sujet', $message);
+
+        $this->afficherVue("contact");
+    }
 }
