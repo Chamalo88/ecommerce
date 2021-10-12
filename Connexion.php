@@ -6,7 +6,7 @@ class Connexion extends PDO
     {
 
         parent::__construct(
-            "mysql:dbname=chicnsimple;host=localhost;charset=UTF8",
+            "mysql:dbname=ecommerce;host=localhost;charset=UTF8",
             "root",
             ""
         );
