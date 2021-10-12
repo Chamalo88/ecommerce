@@ -5,7 +5,7 @@ include("header.php")
 ?>
  <section>
 
-<article class="superpile"><img src="assets/images/powerbank.jpg" alt=""></article>
+<article class="superpile"><img src="assets/images/logo.jpg" alt=""></article>
 
 <article class="bienvenue">Bienvenue chez Powerbank, la qualité aux meilleurs prix !</article>
 
