@@ -2,6 +2,8 @@
 
 namespace Model;
 
+use Connexion;
+
 class Utilisateur
 {
 
@@ -15,7 +17,7 @@ class Utilisateur
     protected $email;
     protected $motDePasse;
     protected $admin;
-    
+
 
 
     /**
@@ -196,5 +198,19 @@ class Utilisateur
         $this->admin = $admin;
 
         return $this;
+    }
+    public function modifierMdP($id_utilisateur, $motDePasse)
+    {
+        $connexion = new Connexion();
+
+
+        $requete = $connexion->prepare(
+            "UPDATE utilisateur 
+                SET motDepasse = ?
+                WHERE id_utilisateur = ?"
+        );
+        $requete->execute(
+            [$motDePasse, $id_utilisateur]
+        );
     }
 }

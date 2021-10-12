@@ -92,4 +92,59 @@ class UtilisateurController extends BaseController
 
         $this->afficherVue("inscription", $donnees);
     }
+    public function emailReinit()
+    {
+        $entetes = "From : virginie.chamalo88@gmail.com\n";
+        $email = "";
+        $link = "http://localhost/ChicNSiteWeb/utilisateur/mdpOublie";
+
+
+        if (isset($_POST['email'])) {
+
+            $email = $_POST['email'];
+            $dao = new UtilisateurDao();
+            $utilisateur = $dao->findByEmail($_POST['email']);
+
+
+            mail($email, "Lien de réinitialisation de mot de passe site The Chic'N", "cliquer ici $link", "Merci de ne pas repondre à ce mail", "$entetes");
+            $this->afficherMessage("Un email vient de vous être envoyé");
+        } else {
+            $this->afficherMessage("Cet Email n'est pas valide", "warning");
+        }
+        $donnees = compact("email");
+        $this->afficherVue("mdpoublie", $donnees);
+    }
+
+    public function reinitialisationMdp()
+    {
+        $utilisateur = unserialize($_SESSION["utilisateur"]);
+        $idUtilisateurConnecte = $utilisateur->getIdUtilisateur();
+
+        if ($_POST["motDePasse"] == $_POST["confirmeMotDePasse"]) {
+
+            $utilisateurDao = new UtilisateurDao();
+
+            $utilisateurDao->modifierMdP(
+                $idUtilisateurConnecte,
+                $_POST['motDePasse']
+
+            );
+
+            $nouvelUtilisateur = new Utilisateur();
+            $nouvelUtilisateur->setIdUtilisateur($idUtilisateurConnecte);
+            $nouvelUtilisateur->setMotDePasse($_POST["mot_de_passe"]);
+            $_SESSION["utilisateur"] = serialize($nouvelUtilisateur);
+
+            $this->afficherMessage("Votre mot de passe à bien été reinistialisé, veuillez vous connecter", "success");
+            $this->redirection("utilisateur/connexion");
+        } else {
+
+            $this->afficherMessage("Les mots de passes sont différents", "danger");
+        }
+
+
+        $donnees = compact("utilisateur");
+
+        $this->afficherVue("newmdp", $donnees);
+    }
 }
