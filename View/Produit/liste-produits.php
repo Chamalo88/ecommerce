@@ -15,7 +15,7 @@
             <div class="card">
                 <h3 class="cardheader"><?php echo $produit->getNom(); ?></h3>
 
-                <img class="imgproduit" src="<?= config::$baseUrl ?>/assets/images/<? $produit->getImage() ?>" alt="Images Produits Powerbank"></img>
+                <img class="imgproduit" src="<?= config2::$baseUrlImages . $produit->getImage() ?>" alt="Images Produits Powerbank"></img>
 
                 <h5 class="cardtitle"><?php echo $produit->getDescription(); ?></h5>
 
