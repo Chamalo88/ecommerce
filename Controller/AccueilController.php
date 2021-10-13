@@ -13,15 +13,5 @@ class AccueilController extends BaseController
         $this->afficherVue();
     }
 
-    public function afficherTout()
-    {
-        $dao = new ProduitDao();
-
-        $listeProduits = $dao->fetchAll();
-
-        $donnees = compact('listeProduits');
-
-
-        $this->afficherVue("footer", $donnees);
-    }
+   
 }
