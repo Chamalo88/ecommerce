@@ -17,6 +17,6 @@
             <label for="message" class="form-label mt-4">Message</label>
             <textarea class="form-control" name="message" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" value="Envoyer">Envoyer</button>
+        <button type="submit" class="btn" value="Envoyer">Envoyer</button>
     </form>
 </div>

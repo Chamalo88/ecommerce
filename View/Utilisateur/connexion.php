@@ -16,7 +16,7 @@
             <input name="motDePasse" type="password" class="form-control" placeholder="Mot de passe">
         </div>
         <div class="logvalid">
-            <input type="submit" class="btn btn-info" value="Connexion">
+            <input type="submit" class="btn" value="Connexion">
         </div>
     </form>
     <a class="D" href="<?= config::$baseUrl ?>/utilisateur/emailReinit">Mot de passe oublié ?</a>

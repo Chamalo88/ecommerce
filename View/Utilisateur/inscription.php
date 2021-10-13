@@ -51,7 +51,7 @@
                         <input name="confirmeMotDePasse" type="password" placeholder="Mot de passe">
                 </div>
 
-                <input type="submit" class="btn btn-info" value="inscription">
+                <input type="submit" class="btn" value="inscription">
 
 
                 <script>

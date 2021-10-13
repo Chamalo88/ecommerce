@@ -26,7 +26,7 @@ Autoloader::register();
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="<?= config::$baseUrl ?>./assets/CSS/style.css">
-    <link rel="stylesheet" href="https://bootswatch.com/5/lumen/bootstrap.min.css">
+
 
 
 </head>
