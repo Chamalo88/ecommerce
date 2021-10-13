@@ -22,6 +22,6 @@ class AccueilController extends BaseController
         $donnees = compact('listeProduits');
 
 
-        $this->afficherVue("liste-produits", $donnees);
+        $this->afficherVue("footer", $donnees);
     }
 }
