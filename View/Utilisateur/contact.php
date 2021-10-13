@@ -1,5 +1,5 @@
 <div class="contact">
-    <form method="post">
+    <form action="/ecommerce/utilisateur/contact" method="post">
         <h1>Contact</h1>
         <div>
             <label for="name">Nom :</label>
@@ -11,12 +11,12 @@
         </div>
         <div>
             <label for="objet">Objet :</label>
-            <input type="text" name="nom" class="form-control">
+            <input type="text" name="objet" class="form-control">
         </div>
         <div>
             <label for="message" class="form-label mt-4">Message</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" name="message" rows="3"></textarea>
         </div>
-        <button type="button" class="btn btn-primary" value="Envoyer">Envoyer</button>
+        <button type="submit" class="btn btn-primary" value="Envoyer">Envoyer</button>
     </form>
 </div>

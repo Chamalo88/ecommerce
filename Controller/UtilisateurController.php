@@ -155,14 +155,19 @@ class UtilisateurController extends BaseController
 
     public function contact() {
 
-        $to = "colin_dev@outlook.fr";
+        if(isset($_POST["nom"])) {
 
-        $message = "Line 1\r\nLine 2\r\nLine 3";
+        $success = mail("colin_dev@outlook.fr", $_POST["objet"], $_POST["message"]);
 
-        $message = wordwrap($message, 70, "\r\n");
-
-        mail($to, 'Mon Sujet', $message);
-
+        if (!$success) {
+                $errorMessage = error_get_last();
+                $this->afficherMessage('erreur ' . print_r($errorMessage, true));
+            } else {
+                $this->afficherMessage("Un email vient de vous être envoyé");
+            }
+        } else{
+            $this->afficherMessage('pas de nom');
+        }
         $this->afficherVue("contact");
     }
 }
