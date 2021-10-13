@@ -5,36 +5,39 @@ namespace Model;
 class Produit
 {
 
-    protected $id_produit;
-    protected $image;
+    protected $id;
     protected $nom;
     protected $description;
-    protected $poidsMoyen;
-    protected $prixTTC;
+    protected $image;
+    protected $prix;
+    protected $stock;
 
     
 
+
     /**
-     * Get the value of id_produit
-     */
-    public function getIdProduit()
+     * Get the value of id
+     */ 
+    public function getId()
     {
-        return $this->id_produit;
+        return $this->id;
     }
 
     /**
-     * Set the value of id_produit
-     */
-    public function setIdProduit($id_produit): self
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
     {
-        $this->id_produit = $id_produit;
+        $this->id = $id;
 
         return $this;
     }
 
     /**
      * Get the value of nom
-     */
+     */ 
     public function getNom()
     {
         return $this->nom;
@@ -42,8 +45,10 @@ class Produit
 
     /**
      * Set the value of nom
-     */
-    public function setNom($nom): self
+     *
+     * @return  self
+     */ 
+    public function setNom($nom)
     {
         $this->nom = $nom;
 
@@ -52,7 +57,7 @@ class Produit
 
     /**
      * Get the value of description
-     */
+     */ 
     public function getDescription()
     {
         return $this->description;
@@ -60,8 +65,10 @@ class Produit
 
     /**
      * Set the value of description
-     */
-    public function setDescription($description): self
+     *
+     * @return  self
+     */ 
+    public function setDescription($description)
     {
         $this->description = $description;
 
@@ -69,44 +76,8 @@ class Produit
     }
 
     /**
-     * Get the value of poidsMoyen
-     */
-    public function getPoidsMoyen()
-    {
-        return $this->poidsMoyen;
-    }
-
-    /**
-     * Set the value of poidsMoyen
-     */
-    public function setPoidsMoyen($poidsMoyen): self
-    {
-        $this->poidsMoyen = $poidsMoyen;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of prixTTC
-     */
-    public function getPrixTTC()
-    {
-        return $this->prixTTC;
-    }
-
-    /**
-     * Set the value of prixTTC
-     */
-    public function setPrixTTC($prixTTC): self
-    {
-        $this->prixTTC = $prixTTC;
-
-        return $this;
-    }
-
-    /**
      * Get the value of image
-     */
+     */ 
     public function getImage()
     {
         return $this->image;
@@ -114,10 +85,52 @@ class Produit
 
     /**
      * Set the value of image
-     */
-    public function setImage($image): self
+     *
+     * @return  self
+     */ 
+    public function setImage($image)
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of prix
+     */ 
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+
+    /**
+     * Set the value of prix
+     *
+     * @return  self
+     */ 
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of stock
+     */ 
+    public function getStock()
+    {
+        return $this->stock;
+    }
+
+    /**
+     * Set the value of stock
+     *
+     * @return  self
+     */ 
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
 
         return $this;
     }
