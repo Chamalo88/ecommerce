@@ -41,7 +41,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-right: 2%;
+  margin-right: 5%;
   font-weight: bold;
 }
 
@@ -133,153 +133,42 @@
     margin-bottom: 4%;
     
 }
-.contener_slideshow {
-  width: 610px;
-  height: 211px;
-  overflow: hidden;
+a{
+  color: RGB(0,204,204);
+  
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
   position: relative;
-  background-image: url(http:YOUR-URL-IMAGE.png);
+  width: 201px;
+  height: 201px;
+  overflow: hidden;
 }
-
-.slid_1,
-.slid_2,
-.slid_3 {
+.slides {
+  -webkit-animation: slider 16s infinite ease-in-out;
+  animation: slider 16s infinite ease-in-out; /* nombre de slide * temps par slide, ici on choissis de passer 4s par slide donc 4 slides * 4s = 16s*/
   position: absolute;
-  width: 610px;
-  height: 211px;
+  left:0; top:0;
+  width: 400%; /* nombre de slides * 100%, ici 4 donc 400% */
+}
+.slides img {
+  display: inline-block;
+  width:200px;
+  height: 200px;
+}
+.slides {
+  animation: slider 16s infinite ease-in-out; /* nombre de slide * temps par slide, ici on choissis de passer 4s par slide donc 4 slides * 4s = 16s*/
 }
 
-.slid_1 {
-  left: 0;
-}
-
-.slid_2 {
-  left: 610px;
-}
-
-.slid_3 {
-  left: 1220px;
-}
-
-.contener_slide {
-  width: 1220px;
-  height: 211px;
-  left: 0px;
-  position: absolute;
-  -webkit-animation-duration: 10s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-name: anim_slide;
-  -moz-animation-duration: 10s;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-name: anim_slide;
-  -ms-animation-duration: 10s;
-  -ms-animation-iteration-count: infinite;
-  -ms-animation-name: anim_slide;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-name: anim_slide;
-}
-
-@-webkit-keyframes anim_slide {
-  0% {
-    left: 0px;
-  }
-
-  22% {
-    left: 0px;
-  }
-
-  33% {
-    left: -610px;
-  }
-
-  45% {
-    left: -610px;
-  }
-
-  66% {
-    left: -1220px;
-  }
-
-  90% {
-    left: -1220px;
-  }
-}
-
-@-moz-keyframes anim_slide {
-  0% {
-    left: 0px;
-  }
-
-  22% {
-    left: 0px;
-  }
-
-  33% {
-    left: -610px;
-  }
-
-  45% {
-    left: -610px;
-  }
-
-  66% {
-    left: -1220px;
-  }
-
-  90% {
-    left: -1220px;
-  }
-}
-
-@-ms-keyframes anim_slide {
-  0% {
-    left: 0px;
-  }
-
-  22% {
-    left: 0px;
-  }
-
-  33% {
-    left: -610px;
-  }
-
-  45% {
-    left: -610px;
-  }
-
-  66% {
-    left: -1220px;
-  }
-
-  90% {
-    left: -1220px;
-  }
-}
-
-@keyframes anim_slide {
-  0% {
-    left: 0px;
-  }
-
-  22% {
-    left: 0px;
-  }
-
-  33% {
-    left: -610px;
-  }
-
-  45% {
-    left: -610px;
-  }
-
-  66% {
-    left: -1220px;
-  }
-
-  90% {
-    left: -1220px;
-  }
+@keyframes slider {
+  0%, 20%, 100%   { left: 0%; }  
+  25%, 45%        { left: -100%; }  
+  50%, 70%        { left: -200%; }
+  75%, 95%        { left: -300%; }  
 }
