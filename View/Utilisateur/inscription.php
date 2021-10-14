@@ -1,4 +1,4 @@
-<div id="inscription">
+<div class="inscription">
 
         <h2>FORMULAIRE D'INSCRIPTION</h2>
 

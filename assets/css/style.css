@@ -194,3 +194,40 @@ text-decoration: none;
 
 
 }
+div.reinitialisation2,
+div.profil, 
+div.profilbis,
+div.inscription{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-top: 50px;
+
+
+}
+a.W, a.L{
+  border: solid 3px black;
+  border-radius: 30%;
+  background-color: RGB(0, 204, 204);
+  color:white
+
+}
+form{
+border: solid 3px RGB(0, 204, 204);
+border-radius: 20%;
+min-width: 20vw;
+padding-top:20px;
+padding-bottom: 20px;
+padding-left: 50px;
+padding-right: 50px;
+}
+h5{
+color: RGB(0, 204, 204);
+font-size: 26px;
+margin-bottom: 20px;
+}
+
+div.action{
+margin-top: 20px;
+}
