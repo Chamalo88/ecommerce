@@ -120,6 +120,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 5%;
+    min-width: 80vw;
 }
 
 .bouton{
@@ -180,6 +181,12 @@ section.footer{
 min-width: 80vw;
 height: 10vh;
 background-color: RGB(0, 204, 204);
+padding-left: 150px;
+padding-right: 150px;
+}
+a.Z, a.X, a.Y{
+color: white;
+font-size: 12px;
 
 
 }
