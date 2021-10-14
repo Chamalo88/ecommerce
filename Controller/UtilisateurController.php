@@ -153,21 +153,114 @@ class UtilisateurController extends BaseController
         $this->afficherVue("newmdp", $donnees);
     }
 
-    public function contact() {
+    public function contact()
+    {
 
-        if(isset($_POST["nom"])) {
+        if (isset($_POST["nom"])) {
 
-        $success = mail("colin_dev@outlook.fr", $_POST["objet"], $_POST["message"]);
+            $success = mail("colin_dev@outlook.fr", $_POST["objet"], $_POST["message"]);
 
-        if (!$success) {
+            if (!$success) {
                 $errorMessage = error_get_last();
                 $this->afficherMessage('erreur ' . print_r($errorMessage, true));
             } else {
                 $this->afficherMessage("Un email vient de vous être envoyé");
             }
-        } else{
+        } else {
             $this->afficherMessage('pas de nom');
         }
         $this->afficherVue("contact");
+    }
+
+    public function profil()
+    {
+        $erreurNom = "";
+        $erreurPrenom = "";
+        $erreurAdresse = "";
+        $erreurCp = "";
+        $erreurVille = "";
+        $erreurTel = "";
+        $erreurEmail = "";
+
+        $utilisateur = unserialize($_SESSION["utilisateur"]);
+        $idUtilisateurConnecte = $utilisateur->getIdUtilisateur();
+
+
+        if (
+            isset($_POST['nom'], $_POST['prenom']) &&
+            $_POST['adresse'] &&
+            $_POST['cp'] &&
+            $_POST['ville'] &&
+            $_POST['tel'] &&
+            $_POST['email']
+        ) {
+
+            $utilisateurDao = new UtilisateurDao();
+
+
+            if (
+                $erreurNom == "" && $erreurPrenom == "" && $erreurAdresse == "" && $erreurCp == "" &&
+                $erreurVille == "" && $erreurTel == "" && $erreurEmail == ""
+            ) {
+
+                $utilisateurDao->modifierUtilisateur(
+                    $idUtilisateurConnecte,
+                    $_POST["nom"],
+                    $_POST["prenom"],
+                    $_POST["adresse"],
+                    $_POST["cp"],
+                    $_POST["ville"],
+                    $_POST["tel"],
+                    $_POST["email"]
+                );
+
+
+                $nouvelUtilisateur = new Utilisateur();
+                $nouvelUtilisateur->setIdUtilisateur($idUtilisateurConnecte);
+                $nouvelUtilisateur->setNom($_POST["nom"]);
+                $nouvelUtilisateur->setPrenom($_POST["prenom"]);
+                $nouvelUtilisateur->setAdresse($_POST["adresse"]);
+                $nouvelUtilisateur->setCp($_POST["cp"]);
+                $nouvelUtilisateur->setVille($_POST["ville"]);
+                $nouvelUtilisateur->setTel($_POST["tel"]);
+                $nouvelUtilisateur->setEmail($_POST["email"]);
+
+                $_SESSION["utilisateur"] = serialize($nouvelUtilisateur);
+
+                $this->afficherMessage("Votre profil a bien été mis à jour");
+            } else {
+                $this->afficherMessage("Certains champs comportent des erreurs", "warning");
+            }
+        }
+
+
+
+        $donnees = compact(
+            "utilisateur",
+            "erreurNom",
+            "erreurPrenom",
+            "erreurAdresse",
+            "erreurCp",
+            "erreurVille",
+            "erreurTel",
+            "erreurEmail"
+        );
+
+        $this->afficherVue("profil", $donnees);
+    }
+
+    public function supprimer($parametres)
+    {
+        $id_utilisateur = $parametres[0];
+
+        if (isset($_POST["confirmation"])) {
+
+            $dao = new UtilisateurDao();
+            $dao->deleteById($id_utilisateur);
+            $this->afficherMessage("Votre profil a bien été supprimée");
+            $this->redirection();
+        }
+
+        $this->afficherVue("confirmation-suppression");
     }
 }
