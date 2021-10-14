@@ -185,7 +185,7 @@ class UtilisateurController extends BaseController
         $utilisateur = unserialize($_SESSION["utilisateur"]);
         $idUtilisateurConnecte = $utilisateur->getIdUtilisateur();
 
-
+        //si l'utilisateur valide le formulaire 
         if (
             isset($_POST['nom'], $_POST['prenom']) &&
             $_POST['adresse'] &&
@@ -214,7 +214,7 @@ class UtilisateurController extends BaseController
                     $_POST["email"]
                 );
 
-
+                //on met l'utilisateur à jour dans la session
                 $nouvelUtilisateur = new Utilisateur();
                 $nouvelUtilisateur->setIdUtilisateur($idUtilisateurConnecte);
                 $nouvelUtilisateur->setNom($_POST["nom"]);
@@ -249,14 +249,15 @@ class UtilisateurController extends BaseController
         $this->afficherVue("profil", $donnees);
     }
 
+
     public function supprimer($parametres)
     {
-        $id_utilisateur = $parametres[0];
+        $id = $parametres[0];
 
         if (isset($_POST["confirmation"])) {
 
             $dao = new UtilisateurDao();
-            $dao->deleteById($id_utilisateur);
+            $dao->deleteById($id);
             $this->afficherMessage("Votre profil a bien été supprimée");
             $this->redirection();
         }
