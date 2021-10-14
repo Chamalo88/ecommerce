@@ -53,7 +53,7 @@ class UtilisateurController extends BaseController
         $email = "";
         $admin = "";
 
-        //si l'utilisateur a valider le formulaire
+
         if (isset($_POST["email"])) {
 
             $nom = $_POST["nom"];

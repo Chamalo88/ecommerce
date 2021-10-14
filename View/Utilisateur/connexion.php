@@ -1,40 +1,34 @@
-<?php
-
-include("header.php");
-
-?>
-
 <section class="formulaireconnexion">
 
-<article class="cadreconnexion">
+  <article class="cadreconnexion">
     <article class="authentification">
-Authentification
+      Authentification
     </article>
 
-  <div class="leformulaire">
+    <div class="leformulaire">
 
-  <form action="" method="post">
+      <form action="" method="post">
 
-<div class="divpseudo">
-    <label for="pseudo">Pseudo</label>
-    <input type="text" id="pseudo"></input>
-</div>
+        <div class="divpseudo">
+        </div> <label>Email</label>
+        <input id="email" value="<?= $email ?>" name="email" type="text" placeholder="Email">
 
-<div class="divmotdepasse">
-    <label for="motdepasse">Mot de passe</label>
-    <input type="password" id="motdepasse"></input>
-</div>
+        <div class="divmotdepasse">
+          <label>Mot de passe</label>
+          <input id="motdepasse" name="motDePasse" type="password" placeholder="Mot de passe">
 
-  <div class=placerbouton>
-        <button class="bouton2" type="submit">Connexion</button>
+        </div>
+
+        <div class=placerbouton>
+          <input type="submit" class="btn btn-info" value="Connexion">
+        </div>
+
+      </form>
     </div>
+    <a id="L" href="<?= config::$baseUrl ?>/utilisateur/emailReinit">Mot de passe oublié ?</a>
 
-  </form>
-  </div>
+    <a class="D" href="<?= config::$baseUrl ?>/utilisateur/inscription">Pas de compte, inscrivez vous ici ! </a>
 
-  <div class="pasdecompte">Pas encore de compte, inscrivez vous ici !</div>
-   
-
-</article>
+  </article>
 
 </section>
