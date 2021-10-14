@@ -172,3 +172,14 @@ a{
   50%, 70%        { left: -200%; }
   75%, 95%        { left: -300%; }  
 }
+section.footer{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-between;
+min-width: 80vw;
+height: 10vh;
+background-color: RGB(0, 204, 204);
+
+
+}
