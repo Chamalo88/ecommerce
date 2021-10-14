@@ -1,22 +1,40 @@
-<div class="connexion">
+<?php
 
+include("header.php");
 
+?>
 
-    <form method="POST">
-        <div class="log">
-            <h1>CONNEXION</h1>
-        </div>
-        <div>
-            <label>Email :</label>
-            <input value="<?= $email ?>" name="email" type="text" class="form-control" placeholder="Email">
-        </div>
+<section class="formulaireconnexion">
 
-        <div>
-            <label>Mot de passe :</label>
-            <input name="motDePasse" type="password" class="form-control" placeholder="Mot de passe">
-        </div>
-        <div class="logvalid">
-            <input type="submit" class="btn" value="Connexion">
-        </div>
-    </form>
-    <a class="D" href="<?= config::$baseUrl ?>/utilisateur/emailReinit">Mot de passe oublié ?</a>
+<article class="cadreconnexion">
+    <article class="authentification">
+Authentification
+    </article>
+
+  <div class="leformulaire">
+
+  <form action="" method="post">
+
+<div class="divpseudo">
+    <label for="pseudo">Pseudo</label>
+    <input type="text" id="pseudo"></input>
+</div>
+
+<div class="divmotdepasse">
+    <label for="motdepasse">Mot de passe</label>
+    <input type="password" id="motdepasse"></input>
+</div>
+
+  <div class=placerbouton>
+        <button class="bouton2" type="submit">Connexion</button>
+    </div>
+
+  </form>
+  </div>
+
+  <div class="pasdecompte">Pas encore de compte, inscrivez vous ici !</div>
+   
+
+</article>
+
+</section>
