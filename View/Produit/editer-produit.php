@@ -17,14 +17,14 @@
     </div>
 
     <div class="form-group">
-        <label>Prix: </label>
-        <input value="<?= $prix ?>" style="max-width:300px" name="prix" type="text" class="form-control" placeholder="Prix TTC">
-    </div>
-    <div class="form-group">
-        <label>Stock: </label>
-        <input value="<?= $stock ?>" style="max-width:300px" name="stock" type="text" class="form-control" placeholder="Stock">
+        <label>Poids Moyen : </label>
+        <input value="<?= $poidsMoyen ?>" style="max-width:300px" name="poidsMoyen" type="text" class="form-control" placeholder="Poids moyen">
     </div>
 
+    <div class="form-group">
+        <label>Prix TTC : </label>
+        <input value="<?= $prixTTC ?>" style="max-width:300px" name="prixTTC" type="text" class="form-control" placeholder="Prix TTC">
+    </div>
 
     <?php if ($modification) { ?>
         <ul>

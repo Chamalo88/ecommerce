@@ -25,40 +25,40 @@ class ProduitController extends BaseController
    public function ajouter()
    {
       $modification = false;
+      $image = "";
       $nom = "";
       $description = "";
-      $image = "";
-      $prix = "";
-      $stock = "";
+      $poidsMoyen = "";
+      $prixTTC = "";
 
       if (isset($_POST["nom"])) {
 
          $dao = new ProduitDao();
 
          $dao->ajouterProduit(
+            $_POST['image'],
             $_POST['nom'],
             $_POST['description'],
-            $_POST['image'],
-            $_POST['prix'],
-            $_POST['stock']
+            $_POST['poidsMoyen'],
+            $_POST['prixTTC']
          );
 
          $this->afficherMessage("Votre produit a bien été ajoutée", "success");
          $this->redirection("produit/afficherTout");
       }
 
-      $donnees = compact("modification", "nom", "description", "image", "prix", "stock");
+      $donnees = compact("modification", "image", "nom", "description", "poidsMoyen", "prixTTC");
       $this->afficherVue("editer-produit", $donnees);
    }
 
    public function supprimer($parametres)
    {
-      $id = $parametres[0];
+      $id_produit = $parametres[0];
 
       if (isset($_POST["confirmation"])) {
 
          $dao = new ProduitDao();
-         $dao->deleteById($id);
+         $dao->deleteById($id_produit);
          $this->afficherMessage("Le produit a bien été supprimée");
          $this->redirection("produit/afficherTout");
       }
@@ -69,50 +69,50 @@ class ProduitController extends BaseController
    public function modifier($parametres)
    {
       $modification = true;
-      $id = $parametres[0];
+      $id_produit = $parametres[0];
+      $image = "";
       $nom = "";
       $description = "";
-      $image = "";
-      $prix = "";
-      $stock = "";
+      $poidsMoyen = "";
+      $prixTTC = "";
 
       $daoProduit = new produitDao();
 
       if (isset($_POST["nom"])) {
 
          $daoProduit->modifierProduit(
-            $id,
+            $id_produit,
+            $_POST['image'],
             $_POST['nom'],
             $_POST['description'],
-            $_POST['image'],
-            $_POST["prix"],
-            $_POST["stock"]
+            $_POST["poidsMoyen"],
+            $_POST["prixTTC"]
          );
 
          $this->afficherMessage("Le produit a bien été modifiée");
       }
 
-      $produit = $daoProduit->findById($id);
+      $produit = $daoProduit->findById($id_produit);
+      $image = $produit->getImage();
       $nom = $produit->getNom();
       $description = $produit->getDescription();
-      $image = $produit->getImage();
-      $prix = $produit->getPrix();
-      $stock = $produit->getStock();
+      $poidsMoyen = $produit->getPoidsMoyen();
+      $prixTTC = $produit->getPrixTTC();
 
 
 
 
-      $listeProduits = $daoProduit->fetchAll($id);
+      $listeProduits = $daoProduit->fetchAll($id_produit);
 
 
       $donnees = compact(
-         "id",
+         "id_produit",
          "modification",
+         "image",
          "nom",
          "description",
-         "image",
-         "prix",
-         "stock",
+         "poidsMoyen",
+         "prixTTC",
          "listeProduits"
 
       );

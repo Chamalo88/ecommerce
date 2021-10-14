@@ -5,39 +5,38 @@ namespace Model;
 class Produit
 {
 
-    protected $id;
+    protected $id_produit;
     protected $nom;
     protected $description;
     protected $image;
     protected $prix;
     protected $stock;
 
-    
 
 
     /**
-     * Get the value of id
-     */ 
-    public function getId()
+     * Get the value of id_produit
+     */
+    public function getId_produit()
     {
-        return $this->id;
+        return $this->id_produit;
     }
 
     /**
-     * Set the value of id
+     * Set the value of id_produit
      *
      * @return  self
-     */ 
-    public function setId($id)
+     */
+    public function setId_produit($id_produit)
     {
-        $this->id = $id;
+        $this->id_produit = $id_produit;
 
         return $this;
     }
 
     /**
      * Get the value of nom
-     */ 
+     */
     public function getNom()
     {
         return $this->nom;
@@ -47,7 +46,7 @@ class Produit
      * Set the value of nom
      *
      * @return  self
-     */ 
+     */
     public function setNom($nom)
     {
         $this->nom = $nom;
@@ -57,7 +56,7 @@ class Produit
 
     /**
      * Get the value of description
-     */ 
+     */
     public function getDescription()
     {
         return $this->description;
@@ -67,7 +66,7 @@ class Produit
      * Set the value of description
      *
      * @return  self
-     */ 
+     */
     public function setDescription($description)
     {
         $this->description = $description;
@@ -77,7 +76,7 @@ class Produit
 
     /**
      * Get the value of image
-     */ 
+     */
     public function getImage()
     {
         return $this->image;
@@ -87,7 +86,7 @@ class Produit
      * Set the value of image
      *
      * @return  self
-     */ 
+     */
     public function setImage($image)
     {
         $this->image = $image;
@@ -97,7 +96,7 @@ class Produit
 
     /**
      * Get the value of prix
-     */ 
+     */
     public function getPrix()
     {
         return $this->prix;
@@ -107,7 +106,7 @@ class Produit
      * Set the value of prix
      *
      * @return  self
-     */ 
+     */
     public function setPrix($prix)
     {
         $this->prix = $prix;
@@ -117,7 +116,7 @@ class Produit
 
     /**
      * Get the value of stock
-     */ 
+     */
     public function getStock()
     {
         return $this->stock;
@@ -127,7 +126,7 @@ class Produit
      * Set the value of stock
      *
      * @return  self
-     */ 
+     */
     public function setStock($stock)
     {
         $this->stock = $stock;
