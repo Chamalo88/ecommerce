@@ -26,13 +26,16 @@
 
             if (isset($_SESSION["utilisateur"])) {
                 $utilisateur = unserialize($_SESSION["utilisateur"]);
+
             ?>
                 <a href="" class="btn btn-primary">Ajouter au panier</a>
 
 
 
                 <?php
+
                 if (isset($admin) == 1) {
+
                 ?>
                     <a href="<?= Config::$baseUrl ?>/produit/modifier/<?php echo $produit->getId_produit(); ?>" class="btn btn-info">Modifier le produit</a>
 
