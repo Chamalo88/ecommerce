@@ -27,7 +27,6 @@ class ProduitController extends BaseController
       $modification = false;
       $image = "";
       $nom = "";
-      $description = "";
       $poidsMoyen = "";
       $prixTTC = "";
 
@@ -38,7 +37,6 @@ class ProduitController extends BaseController
          $dao->ajouterProduit(
             $_POST['image'],
             $_POST['nom'],
-            $_POST['description'],
             $_POST['poidsMoyen'],
             $_POST['prixTTC']
          );
@@ -47,7 +45,7 @@ class ProduitController extends BaseController
          $this->redirection("produit/afficherTout");
       }
 
-      $donnees = compact("modification", "image", "nom", "description", "poidsMoyen", "prixTTC");
+      $donnees = compact("modification", "image", "nom", "poidsMoyen", "prixTTC");
       $this->afficherVue("editer-produit", $donnees);
    }
 
@@ -72,7 +70,6 @@ class ProduitController extends BaseController
       $id_produit = $parametres[0];
       $image = "";
       $nom = "";
-      $description = "";
       $poidsMoyen = "";
       $prixTTC = "";
 
@@ -84,7 +81,6 @@ class ProduitController extends BaseController
             $id_produit,
             $_POST['image'],
             $_POST['nom'],
-            $_POST['description'],
             $_POST["poidsMoyen"],
             $_POST["prixTTC"]
          );
@@ -95,7 +91,6 @@ class ProduitController extends BaseController
       $produit = $daoProduit->findById($id_produit);
       $image = $produit->getImage();
       $nom = $produit->getNom();
-      $description = $produit->getDescription();
       $poidsMoyen = $produit->getPoidsMoyen();
       $prixTTC = $produit->getPrixTTC();
 
@@ -110,7 +105,6 @@ class ProduitController extends BaseController
          "modification",
          "image",
          "nom",
-         "description",
          "poidsMoyen",
          "prixTTC",
          "listeProduits"

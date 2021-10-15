@@ -12,21 +12,20 @@ class ProduitDao extends BaseDao
 
 
 
-    public function ajouterProduit($nom, $description, $image, $prix, $stock)
+    public function ajouterProduit($nom,  $image, $prix, $stock)
     {
 
         $connexion = new Connexion();
 
         $requete = $connexion->prepare(
-            "INSERT INTO produit ( nom, description,image, prix, stock)
-             VALUES (?,?,?,?,?)"
+            "INSERT INTO produit ( nom,image, prix, stock)
+             VALUES (?,?,?,?)"
         );
 
         $requete->execute(
             [
 
                 $nom,
-                $description,
                 $image,
                 $prix,
                 $stock
@@ -34,13 +33,13 @@ class ProduitDao extends BaseDao
         );
     }
 
-    public function modifierProduit($id_produit,  $nom, $description, $image, $prix, $stock)
+    public function modifierProduit($id_produit,  $nom, $image, $prix, $stock)
     {
         $connexion = new Connexion();
 
         $requete = $connexion->prepare(
             "UPDATE produit 
-             SET image = ?, nom =?, description = ?, prix = ?, stock =?
+             SET image = ?, nom =?, prix = ?, stock =?
              WHERE id_produit = ?"
         );
 
@@ -48,7 +47,6 @@ class ProduitDao extends BaseDao
             [
 
                 $nom,
-                $description,
                 $image,
                 $prix,
                 $stock,
@@ -82,7 +80,7 @@ class ProduitDao extends BaseDao
         $connexion = new Connexion();
 
         $resultat = $connexion->query(
-            "SELECT id_produit,  nom, description, image, prix, stock
+            "SELECT id_produit,  nom,  image, prix, stock
                         
             FROM produit 
            

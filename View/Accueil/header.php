@@ -4,7 +4,7 @@
 
   <a class="A" href="<?= config::$baseUrl ?>/produit/affichertout">POWERBOUTIQUE</a>
 
-  <a class="B" href="panier.php">PANIER</a>
+  <a class="B" href="../../panier.php">PANIER</a>
 
   <div class="dropdown">
     <button class="dropbtn">UTILISATEUR</button>

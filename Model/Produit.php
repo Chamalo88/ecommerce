@@ -7,7 +7,6 @@ class Produit
 
     protected $id_produit;
     protected $nom;
-    protected $description;
     protected $image;
     protected $prix;
     protected $stock;
@@ -50,26 +49,6 @@ class Produit
     public function setNom($nom)
     {
         $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of description
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set the value of description
-     *
-     * @return  self
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
 
         return $this;
     }

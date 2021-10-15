@@ -326,69 +326,105 @@ color:var(--couleur1);
 /**************************************************************/
 /*          Partie boutique                      */
 /**************************************************************/
-.produit{
-background-color: var(--couleur2);
-min-width: 50vw;
+section.produit {
+  background-color: var(--couleur1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width:100vw;
+  height: auto;
+  padding-top: 20px;
+
+
+}
+
+h1.titre {
+  font-size: 45px;
+  color : var(--couleur4);
+
+}
+a.O{
+font-size: 30px;
+color:var(--couleur4);
+
+
+}
+div.table {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 50vw;
+  height: auto;
+  
+
+}
+
+div.card {
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-}
-h1.titre{
-font-size: 40px;
-color: var(--couleur4);
-}
-div.title, div.prix{
-color:var(--couleur1);
-font-size: 16px;
-
-
-}
-div.table{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
 flex-wrap: wrap;
-min-width: 80vw;
-
-}
-div.card {
-
-  border: solid 5px var(--couleur3);
+  border: solid 3px var(--couleur4);
   border-radius: 10%;
   color: var(--couleur3);
   font-size: 18px;
-  background-color: var(--couleur4);
+  background-color: var(--couleur2);
   margin-left: 50px;
-  min-width:30vw;
-  height:60vh;
+  min-width: 35vw;
+  min-height: 200px;
   margin-bottom: 20px;
 
 }
-img.img{
-min-width:20vw;
-height:20vh ;
-align-items: center;
+
+h3.cardheader {
+  font-size: 18px;
+  border-bottom: solid 3px var(--couleur4);
+  overflow-wrap: break-word;
+  color: var(--couleur4);
+
 }
-span{
-position: absolute;
+div.desc{
 display: flex;
+flex-direction: column;
+justify-content: center;
 align-items: center;
-text-align: center;
-width: 30vw;
-padding: 5px;
-color: var(--couleur1);
-font-size: 10px;
+flex-wrap: wrap;
+min-width: 30vw;
 
 
 }
-div.stock{
-
-color:var(--couleur4);
-font-size: 16px;
+h5.cardtitle {
+  font-size: 10px;
+  color:var(--couleur1);
+ flex-wrap: wrap;
 }
-div.prix{
+
+img .imgproduit {
+  min-width: 10vw;
+  height: 10vh;
+
+}
+a.panierbtn, a.panierbtn2{
+border: solid 3px var(--couleur4);
+background-color: var(--couleur3);
 color:var(--couleur1);
-font-size: 16px;
+font-size: 14px;
+
+}
+
+h6.card-subtitle {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color:var(--couleur1);
+
+}
+
+h3.cardfooter {
+  font-size: 18px;
+  border-top: solid 3px var(--couleur3);
+  color: var(--couleur4);
 }

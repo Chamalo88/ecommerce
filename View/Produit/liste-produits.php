@@ -1,6 +1,8 @@
 <section class="produit">
 
-    <h1 class="titre">LA BOUTIQUE POWERBANK </h1>
+    <h1 class="titre">Nos produits</h1>
+
+
 
     <div class="table">
 
@@ -11,16 +13,14 @@
 
 
             <div class="card">
-                <div class="title"><?php echo $produit->getNom(); ?></div>
+                <h3 class="cardheader"><?php echo $produit->getNom(); ?></h3>
+
+                <img class="imgproduit" style="width:300px;height:300px" src="<?= Config2::$baseUrlImages . $produit->getImage() ?>" alt="Images Produits The Chic'N"></img>
+
+                <h6 class="card-subtitle"><?php echo $produit->getStock(); ?> En stock</h6>
 
 
-                <img class="img" src="<?= config2::$baseUrlImages . $produit->getImage() ?>" alt="Images Produits Powerbank"></img>
-
-
-                <span><?php echo $produit->getDescription(); ?></span>
-
-                <div class="stock">Quantité en stock :<?php echo $produit->getStock() ?> </div>
-                <div class="prix"><?php echo $produit->getPrix() ?> € TTC</div>
+                <h3 class="cardfooter"><?php echo $produit->getPrix() ?> € TTC</h3>
 
 
                 <?php
@@ -29,7 +29,7 @@
                     $utilisateur = unserialize($_SESSION["utilisateur"]);
 
                 ?>
-                    <a href="" class="btn btn-primary panier">Ajouter au panier</a>
+                    <a class="panierbtn" href="panier.php" class="btn btn-primary">Ajouter au panier</a>
 
             </div>
 
@@ -45,7 +45,7 @@
             <?php }
                 } else {
             ?>
-            <a href="" class="btn btn-primary">Veuillez vous connecter <br>
+            <a href="" class="panierbtn2">Veuillez vous connecter <br>
                 pour Ajouter au panier</a>
         <?php   } ?>
 
@@ -67,5 +67,5 @@
 ?>
 
 
-<a class="H" href="<?= config::$baseUrl ?>"><i class="fas fa-sign-out-alt"></a></i>
+<a class="O" href="<?= config::$baseUrl ?>"><i class="fas fa-sign-out-alt"></a></i>
 </section>
