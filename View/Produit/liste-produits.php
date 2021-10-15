@@ -29,7 +29,7 @@
                     $utilisateur = unserialize($_SESSION["utilisateur"]);
 
                 ?>
-                    <a href="" class="btn btn-primary">Ajouter au panier</a>
+                    <a href="" class="btn btn-primary panier">Ajouter au panier</a>
 
 
 
