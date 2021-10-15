@@ -338,6 +338,12 @@ h1.titre{
 font-size: 40px;
 color: var(--couleur4);
 }
+div.title{
+color:var(--couleur1);
+font-size: 18px;
+
+
+}
 div.table{
 display: flex;
 flex-direction: row;
@@ -372,7 +378,7 @@ position: absolute;
 display: flex;
 align-items: center;
 text-align: center;
-width: 50vw;
+width: 30vw;
 padding: 5px;
 color: var(--couleur1);
 font-size: 10px;
