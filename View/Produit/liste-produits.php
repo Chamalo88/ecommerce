@@ -12,7 +12,7 @@
 
             <div class="card">
                 <h5><?php echo $produit->getNom(); ?></h5>
-
+            <div colonne>
                 <img class="img" src="<?= config2::$baseUrlImages . $produit->getImage() ?>" alt="Images Produits Powerbank"></img>
 
                 <span><?php echo $produit->getDescription(); ?></span>
