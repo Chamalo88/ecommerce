@@ -53,7 +53,7 @@ class UtilisateurController extends BaseController
         $email = "";
         $admin = "";
 
-        //si l'utilisateur a valider le formulaire
+
         if (isset($_POST["email"])) {
 
             $nom = $_POST["nom"];
@@ -96,7 +96,7 @@ class UtilisateurController extends BaseController
     {
         $entetes = "From : virginie.chamalo88@gmail.com\n";
         $email = "";
-        $link = "http://localhost/ecommerce/utilisateur/mdpOublie";
+        $link = "http://localhost/ecommerce/utilisateur/newmdp";
 
 
         if (isset($_POST['email'])) {

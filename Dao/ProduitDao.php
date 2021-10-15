@@ -18,13 +18,13 @@ class ProduitDao extends BaseDao
         $connexion = new Connexion();
 
         $requete = $connexion->prepare(
-            "INSERT INTO produit  (nom, description, image, prix, stock)
+            "INSERT INTO produit ( nom, description,image, prix, stock)
              VALUES (?,?,?,?,?)"
         );
 
         $requete->execute(
             [
-                $image,
+
                 $nom,
                 $description,
                 $image,
@@ -34,38 +34,38 @@ class ProduitDao extends BaseDao
         );
     }
 
-    public function modifierProduit($id, $nom, $description, $image, $prix, $stock)
+    public function modifierProduit($id_produit,  $nom, $description, $image, $prix, $stock)
     {
         $connexion = new Connexion();
 
         $requete = $connexion->prepare(
             "UPDATE produit 
-             SET image = ?, nom =?, description = ?, image = ?, prix =?, stock=?
-             WHERE id = ?"
+             SET image = ?, nom =?, description = ?, prix = ?, stock =?
+             WHERE id_produit = ?"
         );
 
         $requete->execute(
             [
-                $image,
+
                 $nom,
                 $description,
                 $image,
                 $prix,
                 $stock,
-                $id
+                $id_produit
             ]
         );
     }
 
-    public function findById($id)
+    public function findById($id_produit)
     {
         $connexion = new Connexion();
 
         $requete = $connexion->prepare(
-            "SELECT * FROM produit WHERE id = ?"
+            "SELECT * FROM produit WHERE id_produit = ?"
         );
 
-        $requete->execute([$id]);
+        $requete->execute([$id_produit]);
 
         $tableauProduit = $requete->fetch();
 
@@ -82,7 +82,7 @@ class ProduitDao extends BaseDao
         $connexion = new Connexion();
 
         $resultat = $connexion->query(
-            "SELECT id, nom, description,image, prix, stock
+            "SELECT id_produit,  nom, description, image, prix, stock
                         
             FROM produit 
            

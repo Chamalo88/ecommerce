@@ -1,12 +1,14 @@
-<div id="reinitialisation2">
+<div class="reinitialisation2">
 
-<h2>REINITIALISATION MOT DE PASSE</h2>
+    <h5>REINITIALISATION MOT DE PASSE</h5>
 
-<form method="POST">
-<div>
-       
-        <input value="<?= $email ?>" name="email" type="text" class="form-control" placeholder="Entrer votre Email">
-    </div>
-    <input  type="submit" class="btn btn-info" value="Réinitialiser le mon de passe">
+    <form method="POST">
+        <div>
 
-</form>
+            <input value="<?= $email ?>" name="email" type="text" class="form-control" placeholder="Entrer votre Email">
+        </div>
+        <input type="submit" class="btn btn-info" value="Envoyer">
+        <p> Un mail va vous être envoyez sous 15 minutes.
+            <br>Pensez à verifier dans vos Spam.
+        </p>
+    </form>
