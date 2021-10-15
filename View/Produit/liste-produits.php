@@ -2,7 +2,7 @@
 
     <h1 class="titre">LA BOUTIQUE POWERBANK </h1>
 
-    <div class=" table">
+    <div class="table">
 
         <?php
 
@@ -11,15 +11,15 @@
 
 
             <div class="card">
-                <h3 class="cardheader"><?php echo $produit->getNom(); ?></h3>
+                <h5><?php echo $produit->getNom(); ?></h5>
 
-                <img class="imgproduit" src="<?= config2::$baseUrlImages . $produit->getImage() ?>" alt="Images Produits Powerbank"></img>
+                <img class="img" src="<?= config2::$baseUrlImages . $produit->getImage() ?>" alt="Images Produits Powerbank"></img>
 
-                <h5 class="cardtitle"><?php echo $produit->getDescription(); ?></h5>
+                <span><?php echo $produit->getDescription(); ?></span>
 
 
-                <h3 class="cardfooter">Quantité en stock :<?php echo $produit->getStock() ?> </h3>
-                <h3 class="cardfooter"><?php echo $produit->getPrix() ?> € TTC</h3>
+                <p>Quantité en stock :<?php echo $produit->getStock() ?> </p>
+                <h5><?php echo $produit->getPrix() ?> € TTC</h5>
             </div>
 
             <?php

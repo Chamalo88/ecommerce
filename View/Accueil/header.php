@@ -1,15 +1,16 @@
 <section class="navbar">
-  <div class="powerbank" href="default.asp">Powerbank</div>
-  <div class="fantome"></div>
-  <a class="A" href="<?= config::$baseUrl ?>/produit/affichertout">La POWERBoutique</a>
 
-  <a class="B" href="../../panier.php">Panier</a>
+  <div class="powerbank" href="default.asp"><img class="superpile" src="assets/images/logo2.jpg" alt="Logo Powerbank">POWERBANK</div>
+
+  <a class="A" href="<?= config::$baseUrl ?>/produit/affichertout">POWERBOUTIQUE</a>
+
+  <a class="B" href="../../panier.php">PANIER</a>
 
   <div class="dropdown">
-    <button class="dropbtn">Utilisateur</button>
+    <button class="dropbtn">UTILISATEUR</button>
     <div class="dropdown-content">
       <a class="C" href="<?= config::$baseUrl ?>/utilisateur/connexion"><i class="fas fa-key" title="CONNEXION"></i> Connexion</a>
-      <a class="D" href="<?= config::$baseUrl ?>/utilisateur/inscription"><i class="fas fa-user" title="INSCRIPTION"></i> Inscription</a>
+      <a class="M" href="<?= config::$baseUrl ?>/utilisateur/inscription"><i class="fas fa-user" title="INSCRIPTION"></i> Inscription</a>
       <?php
 
       if (isset($_SESSION["utilisateur"])) {
