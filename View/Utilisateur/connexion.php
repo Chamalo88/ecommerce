@@ -1,7 +1,5 @@
 <div class="connexion">
 
-
-
   <form method="POST">
     <div class="log">
       <h1>CONNEXION</h1>
@@ -16,7 +14,7 @@
       <input name="motDePasse" type="password" class="form-control" placeholder="Mot de passe">
     </div>
     <div class="logvalid">
-      <input class="button1" type="submit" class="btn btn-info" value="CONNEXION">
+      <input class="button1" type="submit" value="CONNEXION">
     </div>
   </form>
 
@@ -25,4 +23,4 @@
   <a class="D" href="<?= config::$baseUrl ?>/utilisateur/inscription">Pas de compte, inscrivez vous ici ! </a>
 
 
-  </section>
+</div>

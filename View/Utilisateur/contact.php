@@ -1,5 +1,6 @@
 <div class="contact">
     <form action="/ecommerce/utilisateur/contact" method="post">
+    <div class="class">
         <h1>Contact</h1>
         <div>
             <label for="name">Nom :</label>
@@ -18,5 +19,7 @@
             <textarea class="form-control" name="message" rows="3"></textarea>
         </div>
         <button type="submit" class="btn" value="Envoyer">Envoyer</button>
+
+    </div>
     </form>
 </div>

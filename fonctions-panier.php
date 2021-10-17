@@ -158,4 +158,5 @@ function compterArticles()
    return 0;
 
 }
+
 ?>

@@ -6,6 +6,7 @@ include("header.php")
 <section class="accueil">
 
        <article class="bienvenue">Bienvenue chez Powerbank,<br> la qualité aux meilleurs prix !</article>
+
        <div class="container">
               <div class="slider">
                      <div class="slides">
@@ -23,6 +24,8 @@ include("header.php")
                      </div>
               </div>
        </div>
+      
+
        <article class="acceder">Vous pouvez acceder à l'ensemble de notre catalogue en vous connectant <br> via l'onglet utilisateur </article>
 
 

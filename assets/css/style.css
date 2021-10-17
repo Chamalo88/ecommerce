@@ -166,6 +166,7 @@ a.B,
   0 0 42px rgb(72, 73, 73),
   0 0 77px rgb(153, 155, 155);
 }
+
 .container{
   display: flex;
   flex-direction: row;
@@ -175,9 +176,10 @@ a.B,
 
 .slider {
   position: relative;
-  width: 201px;
-  height: 201px;
+  width: 220px;
+  height: 205px;
   overflow: hidden;
+  
 }
 .slides {
   -webkit-animation: slider 16s infinite ease-in-out;
@@ -190,6 +192,7 @@ a.B,
   display: inline-block;
   width:200px;
   height: 200px;
+  margin-right: 10px;
 }
 .slides {
   animation: slider 16s infinite ease-in-out; /* nombre de slide * temps par slide, ici on choissis de passer 4s par slide donc 4 slides * 4s = 16s*/
@@ -227,7 +230,7 @@ text-decoration: none;
 /*          Partie formulaires                        */
 /**************************************************************/
 
-.connexion,.inscription,.profil {
+.connexion,.inscription,.profil, .contact {
   background-color: var(--couleur2);
   min-width: 50vw;
   height: 100vh;
@@ -255,13 +258,14 @@ label {
   align-items: center;
 }
 
-div.log {
+div.log, div.cont{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
 }
+
 
 input {
   height: 30px;
