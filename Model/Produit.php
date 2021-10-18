@@ -16,7 +16,7 @@ class Produit
     /**
      * Get the value of id_produit
      */
-    public function getId_produit()
+    public function getIdProduit()
     {
         return $this->id_produit;
     }
@@ -26,7 +26,7 @@ class Produit
      *
      * @return  self
      */
-    public function setId_produit($id_produit)
+    public function setIdProduit($id_produit)
     {
         $this->id_produit = $id_produit;
 

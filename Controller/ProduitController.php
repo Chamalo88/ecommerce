@@ -113,4 +113,23 @@ class ProduitController extends BaseController
 
       $this->afficherVue("editer-produit", $donnees);
    }
+
+   public function ajouterPanier($parametres)
+   {
+      // var_dump($parametres);
+      $id = $parametres[0];
+      $_SESSION["produit"][$id] += 1;
+
+      $dao = new ProduitDao();
+      $tabProd = [];
+      foreach ($_SESSION["produit"] as $id2 => $qte) {
+         $tabProd[$id2] = $dao->findById($id);
+         $tabProd[$id2]->qte = $qte;
+      }
+
+
+      $donnees = compact('tabProd');
+      var_dump($donnees);
+      $this->afficherVue("panier", $donnees);
+   }
 }

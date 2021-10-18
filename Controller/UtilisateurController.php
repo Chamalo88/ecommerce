@@ -158,9 +158,12 @@ class UtilisateurController extends BaseController
 
         if (isset($_POST["nom"])) {
 
-            ini_set("sendmail_from", $_POST["email"]);
-            $success = mail("colin_dev@outlook.fr", $_POST["objet"], $_POST["message"]);
-            ini_restore("sendmail_from");
+            // ini_set("sendmail_from", $_POST["email"]);
+            $headers = 'From: ' . $_POST["email"] . "\r\n" .
+                'Reply-To: ' . $_POST["email"] . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+            $success = mail("colin_dev@outlook.fr", $_POST["objet"], $_POST["message"], $headers);
+            // ini_restore("sendmail_from");
 
             if (!$success) {
                 $errorMessage = error_get_last();

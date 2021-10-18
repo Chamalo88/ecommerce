@@ -23,26 +23,26 @@
                 <h3 class="cardfooter"><?php echo $produit->getPrix() ?> € TTC</h3>
 
 
+
                 <?php
 
                 if (isset($_SESSION["utilisateur"])) {
                     $utilisateur = unserialize($_SESSION["utilisateur"]);
 
                 ?>
-               
-               <a href="panier.php?action=ajout&amp;l=LIBELLEPRODUIT&amp;q=QUANTITEPRODUIT&amp;p=PRIXPRODUIT" onclick="window.open(this.href, '', 
-'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
+
+                    <a href="<?= Config::$baseUrl ?>/produit/ajouterPanier/<?php echo $produit->getIdProduit(); ?>">Ajouter au panier</a>
 
             </div>
 
             <?php
 
-                    if (isset($admin) == 1) {
+                    if ($utilisateur->getAdmin() == 1) {
 
             ?>
-                <a href="<?= Config::$baseUrl ?>/produit/modifier/<?php echo $produit->getId_produit(); ?>" class="btn btn-info">Modifier le produit</a>
+                <a href=" <?= Config::$baseUrl ?>/produit/modifier/<?php echo $produit->getIdProduit(); ?>" class="btn btn-info">Modifier le produit</a>
 
-                <a href="<?= Config::$baseUrl ?>/produit/supprimer/<?php echo $produit->getId_produit(); ?>" class="btn btn-danger">Supprimer le produit</a>
+                <a href="<?= Config::$baseUrl ?>/produit/supprimer/<?php echo $produit->getIdProduit(); ?>" class="btn btn-danger">Supprimer le produit</a>
 
             <?php }
                 } else {
